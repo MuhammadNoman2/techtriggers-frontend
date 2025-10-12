@@ -1,0 +1,114 @@
+/* styles/policy.css */
+
+.policy-page {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2.5rem 2rem;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    line-height: 1.7;
+    color: #222;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1.5px 6px rgba(0,0,0,0.03);
+    border: 1px solid #f0f0f0;
+    transition: box-shadow 0.2s;
+}
+
+.policy-page:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.policy-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: #1a237e;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.policy-updated {
+    font-size: 1rem;
+    color: #607d8b;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-style: italic;
+}
+
+.policy-content {
+    margin-top: 1.5rem;
+}
+
+.policy-content h2,
+.policy-content h3 {
+    color: #283593;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.policy-content h2 {
+    font-size: 1.35rem;
+    border-left: 4px solid #7986cb;
+    padding-left: 0.7rem;
+    background: #f5f7fa;
+    border-radius: 4px;
+}
+
+.policy-content h3 {
+    font-size: 1.1rem;
+    border-left: 3px solid #c5cae9;
+    padding-left: 0.6rem;
+    background: #fafbfc;
+    border-radius: 3px;
+}
+
+.policy-content p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.policy-content ul,
+.policy-content ol {
+    margin: 1rem 0 1.5rem 2rem;
+    padding-left: 1.2rem;
+    color: #444;
+    font-size: 1rem;
+}
+
+.policy-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.policy-content a {
+    color: #3949ab;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.policy-content a:hover {
+    color: #1e88e5;
+}
+
+@media (max-width: 768px) {
+    .policy-page {
+        padding: 1.2rem 0.5rem;
+        border-radius: 8px;
+    }
+
+    .policy-title {
+        font-size: 1.6rem;
+    }
+
+    .policy-content h2 {
+        font-size: 1.1rem;
+        padding-left: 0.5rem;
+    }
+
+    .policy-content h3 {
+        font-size: 1rem;
+        padding-left: 0.4rem;
+    }
+}

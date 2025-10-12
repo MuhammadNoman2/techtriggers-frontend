@@ -1,0 +1,120 @@
+/* Technology Banner */
+.tech-banner {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  padding: 2rem 0;
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-banner::before,
+.tech-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech-banner::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 0) 100%);
+}
+
+.tech-banner::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 0) 100%);
+}
+
+.tech-banner-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.tech-banner-track:hover {
+  animation-play-state: paused;
+}
+
+.tech-banner-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-banner-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+.tech-icon {
+  font-size: 1.5rem;
+  filter: grayscale(0.3);
+  transition: filter 0.3s ease;
+}
+
+.tech-banner-item:hover .tech-icon {
+  filter: grayscale(0);
+}
+
+.tech-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  letter-spacing: 0.5px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-banner {
+    padding: 1.5rem 0;
+  }
+
+  .tech-banner-track {
+    gap: 2rem;
+  }
+
+  .tech-banner-item {
+    padding: 0.75rem 1.25rem;
+    gap: 0.5rem;
+  }
+
+  .tech-icon {
+    font-size: 1.25rem;
+  }
+
+  .tech-name {
+    font-size: 0.9rem;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tech-banner-track {
+    animation: scroll 60s linear infinite;
+  }
+}

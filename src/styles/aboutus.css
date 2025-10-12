@@ -1,0 +1,478 @@
+/* About Us Page Styles */
+
+.aboutus {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.aboutus-hero {
+  position: relative;
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.aboutus-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aboutus-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aboutus-hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.aboutus-hero-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(220, 153, 52, 0.15) 0%, transparent 70%);
+}
+
+.decoration-circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: -100px;
+}
+
+.decoration-circle-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -200px;
+  left: -150px;
+}
+
+.decoration-circle-3 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 10%;
+}
+
+/* Container */
+.aboutus-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #dc9934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Story Section */
+.aboutus-story {
+  padding: 6rem 0;
+}
+
+.aboutus-story-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutus-story-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.aboutus-story-text p {
+  margin-bottom: 1.5rem;
+}
+
+.aboutus-story-text strong {
+  color: #dc9934;
+  font-weight: 600;
+}
+
+/* Mission & Vision */
+.aboutus-mission-vision {
+  padding: 6rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.mission-vision-card {
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mission-vision-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(220, 153, 52, 0.5);
+}
+
+.mission-vision-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  border-radius: 50%;
+  color: white;
+}
+
+.mission-vision-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #dc9934;
+}
+
+.mission-vision-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Services Grid */
+.aboutus-services {
+  padding: 6rem 0;
+}
+
+.aboutus-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.aboutus-service-card {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.aboutus-service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(220, 153, 52, 0.5);
+  box-shadow: 0 10px 30px rgba(220, 153, 52, 0.2);
+}
+
+.aboutus-service-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(187, 103, 1, 0.2) 0%, rgba(220, 153, 52, 0.2) 100%);
+  border-radius: 15px;
+  color: #dc9934;
+}
+
+.aboutus-service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.aboutus-service-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Values Section */
+.aboutus-values {
+  padding: 6rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.aboutus-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.aboutus-value-card {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.aboutus-value-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(220, 153, 52, 0.5);
+}
+
+.aboutus-value-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.aboutus-value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #dc9934;
+}
+
+.aboutus-value-card p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.aboutus-stats {
+  padding: 6rem 0;
+}
+
+.aboutus-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.aboutus-stat-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.aboutus-stat-card:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(220, 153, 52, 0.5);
+}
+
+.aboutus-stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.aboutus-stat-label {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Why Choose Us */
+.aboutus-why-choose {
+  padding: 6rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.aboutus-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.aboutus-why-item {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.aboutus-why-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(220, 153, 52, 0.5);
+  box-shadow: 0 10px 30px rgba(220, 153, 52, 0.2);
+}
+
+.aboutus-why-item svg {
+  color: #dc9934;
+  margin-bottom: 1rem;
+}
+
+.aboutus-why-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: white;
+}
+
+.aboutus-why-item p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.aboutus-cta {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.aboutus-cta h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.aboutus-cta p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+}
+
+.aboutus-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutus-cta-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.aboutus-cta-button.primary {
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.aboutus-cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(220, 153, 52, 0.4);
+}
+
+.aboutus-cta-button.secondary {
+  background: transparent;
+  color: #dc9934;
+  border: 2px solid #dc9934;
+}
+
+.aboutus-cta-button.secondary:hover {
+  background: rgba(220, 153, 52, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutus {
+    padding-top: 60px;
+  }
+
+  .aboutus-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .aboutus-container {
+    padding: 0 1.5rem;
+  }
+
+  .aboutus-story,
+  .aboutus-mission-vision,
+  .aboutus-services,
+  .aboutus-values,
+  .aboutus-stats,
+  .aboutus-why-choose,
+  .aboutus-cta {
+    padding: 4rem 0;
+  }
+
+  .mission-vision-grid,
+  .aboutus-services-grid,
+  .aboutus-values-grid,
+  .aboutus-stats-grid,
+  .aboutus-why-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mission-vision-card,
+  .aboutus-service-card,
+  .aboutus-value-card,
+  .aboutus-why-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .aboutus-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .aboutus-cta-button {
+    width: 100%;
+  }
+}

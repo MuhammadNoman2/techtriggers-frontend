@@ -1,0 +1,107 @@
+{
+  "company": {
+    "name": "TechTrigger",
+    "description": "Empowering businesses with cutting-edge technology solutions and innovative digital experiences.",
+    "logo": "🚀",
+    "established": 2020
+  },
+  "contact": {
+    "email": "techtriggers76@gmail.com",
+    "phone": "+92 337 6279457",
+    "address": {
+      "street": "Office number 2 main GT road opposite PSO pump",
+      "city": "Rawalpindi",
+      "state": "Punjab",
+      "zipCode": "46200",
+      "country": "Pakistan"
+    }
+  },
+  "navigation": {
+    "company": [
+      { "label": "About Us", "href": "/about" },
+      { "label": "Our Team", "href": "/team" },
+      { "label": "Careers", "href": "/careers" },
+      { "label": "Blog", "href": "/blog" }
+    ],
+    "services": [
+      { "label": "All Services", "href": "/#service" },
+      { "label": "Web Development", "href": "/#service" },
+      { "label": "Mobile Apps", "href": "/#service" },
+      { "label": "AI & Machine Learning", "href": "/#service" },
+      { "label": "Cloud Solutions", "href": "/#service" }
+    ],
+    "resources": [
+      { "label": "Portfolio", "href": "/#products" },
+      { "label": "Get Started", "href": "/#get-started" },
+      { "label": "Contact Us", "href": "/#contact" }
+    ],
+    "legal": [
+      { "label": "Privacy Policy", "href": "/privacy" },
+      { "label": "Terms of Service", "href": "/terms" },
+      { "label": "Cookie Policy", "href": "/cookies" },
+      { "label": "GDPR", "href": "/gdpr" },
+      { "label": "Security", "href": "/security" }
+    ]
+  },
+  "socialMedia": [
+    {
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com/techtrigger",
+      "color": "#1DA1F2"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://linkedin.com/company/techtrigger",
+      "color": "#0077B5"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/techtrigger",
+      "color": "#333"
+    },
+    {
+      "name": "Discord",
+      "icon": "discord",
+      "url": "https://discord.gg/techtrigger",
+      "color": "#5865F2"
+    },
+    {
+      "name": "YouTube",
+      "icon": "youtube",
+      "url": "https://youtube.com/@techtrigger",
+      "color": "#FF0000"
+    },
+    {
+      "name": "Instagram",
+      "icon": "instagram",
+      "url": "https://instagram.com/techtrigger",
+      "color": "#E4405F"
+    }
+  ],
+  "newsletter": {
+    "title": "Stay Updated",
+    "description": "Get the latest updates, tips, and insights delivered to your inbox.",
+    "placeholder": "Enter your email address",
+    "buttonText": "Subscribe"
+  },
+  "awards": [
+    {
+      "name": "Best Tech Startup 2023",
+      "organization": "TechCrunch",
+      "year": 2023
+    },
+    {
+      "name": "Innovation Award",
+      "organization": "Silicon Valley Awards",
+      "year": 2022
+    },
+    {
+      "name": "Top Developer Tools",
+      "organization": "DevAwards",
+      "year": 2021
+    }
+  ]
+}

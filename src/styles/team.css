@@ -1,0 +1,460 @@
+/* Team Page Styles */
+
+.team {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.team-hero {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(220, 153, 52, 0.1) 0%, transparent 70%);
+}
+
+.team-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.team-hero-subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Container */
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #dc9934 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Team Introduction */
+.team-intro {
+  padding: 4rem 0 2rem;
+}
+
+/* Team Members */
+.team-members {
+  padding: 4rem 0;
+}
+
+.team-member-card {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.team-member-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(220, 153, 52, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(220, 153, 52, 0.2);
+}
+
+.team-member-card.reverse {
+  grid-template-columns: 1fr 350px;
+}
+
+.team-member-card.reverse .team-member-image-wrapper {
+  order: 2;
+}
+
+.team-member-card.reverse .team-member-content {
+  order: 1;
+}
+
+/* Member Image */
+.team-member-image-wrapper {
+  position: relative;
+}
+
+.team-member-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid rgba(220, 153, 52, 0.3);
+}
+
+.team-member-social {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-member-card:hover .team-member-social {
+  opacity: 1;
+}
+
+.team-social-link {
+  color: #dc9934;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-social-link:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Member Content */
+.team-member-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.team-member-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #dc9934;
+  margin-bottom: 0;
+}
+
+.team-member-role {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+.team-member-bio {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.team-member-details {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(220, 153, 52, 0.1);
+  border-radius: 50px;
+  color: #dc9934;
+}
+
+.team-member-detail svg {
+  flex-shrink: 0;
+}
+
+.team-member-detail span {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Expertise */
+.team-member-expertise h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.expertise-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(220, 153, 52, 0.3);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.expertise-tag:hover {
+  background: rgba(220, 153, 52, 0.2);
+  border-color: rgba(220, 153, 52, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Achievements */
+.team-member-achievements h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-member-achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-member-achievements li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.team-member-achievements li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #dc9934;
+  font-weight: bold;
+}
+
+/* Values Section */
+.team-values {
+  padding: 6rem 0;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.team-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.team-value-card {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.team-value-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(220, 153, 52, 0.5);
+}
+
+.team-value-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  border-radius: 15px;
+  color: white;
+}
+
+.team-value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #dc9934;
+}
+
+.team-value-card p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.team-cta {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.team-cta h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.team-cta p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2.5rem;
+}
+
+.team-cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.team-cta-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.team-cta-button.primary {
+  background: linear-gradient(135deg, #bb6701 0%, #dc9934 100%);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.team-cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(220, 153, 52, 0.4);
+}
+
+.team-cta-button.secondary {
+  background: transparent;
+  color: #dc9934;
+  border: 2px solid #dc9934;
+}
+
+.team-cta-button.secondary:hover {
+  background: rgba(220, 153, 52, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .team-member-card,
+  .team-member-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .team-member-card.reverse .team-member-image-wrapper,
+  .team-member-card.reverse .team-member-content {
+    order: unset;
+  }
+
+  .team-member-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team {
+    padding-top: 60px;
+  }
+
+  .team-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .team-container {
+    padding: 0 1.5rem;
+  }
+
+  .team-intro,
+  .team-members,
+  .team-values,
+  .team-cta {
+    padding: 3rem 0;
+  }
+
+  .team-member-card {
+    padding: 2rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .team-member-image {
+    height: 300px;
+  }
+
+  .team-member-name {
+    font-size: 2rem;
+  }
+
+  .team-member-role {
+    font-size: 1.1rem;
+  }
+
+  .team-member-details {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .team-member-social {
+    opacity: 1;
+  }
+
+  .team-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .team-cta-button {
+    width: 100%;
+  }
+}
