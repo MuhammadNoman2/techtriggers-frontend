@@ -1,0 +1,2 @@
+import{j as s}from"./index-DrZsNFWN.js";import{s as l}from"./privacyPolicy-CL6DtbFz.js";const a=()=>{const{title:i,updated:c,content:r}=l.termsOfService;return s.jsxs("div",{className:"policy-page",children:[s.jsx("h1",{className:"policy-title",children:i}),s.jsx("p",{className:"policy-updated",children:c}),s.jsx("div",{className:"policy-content",children:r.split(`
+`).map((t,e)=>t.trim()?s.jsx("p",{children:t.trim()},e):s.jsx("br",{},e))})]})};export{a as default};
