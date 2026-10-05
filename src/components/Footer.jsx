@@ -1,242 +1,63 @@
-import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
+import { SITE } from '../site/config'
+import { SERVICES, PRODUCTS } from '../site/data'
+import { Icon } from './UI'
 
-import { 
-  Twitter, 
-  Linkedin, 
-  Github, 
-  MessageCircle, 
-  Youtube, 
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-  Send,
-  Award
-} from 'lucide-react';
-import footerData from '../data/footerData.json'; // Assuming you have a JSON file with footer data
-import '../styles/footer.css';
-
-const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [isSubscribing, setIsSubscribing] = useState(false);
-
-  const handleNewsletterSubmit = async (e) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setIsSubscribing(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      alert('Thank you for subscribing!');
-      setEmail('');
-      setIsSubscribing(false);
-    }, 1000);
-  };
-
-  const getSocialIcon = (iconName) => {
-    const icons = {
-      twitter: Twitter,
-      linkedin: Linkedin,
-      github: Github,
-      discord: MessageCircle,
-      youtube: Youtube,
-      instagram: Instagram
-    };
-    return icons[iconName] || Mail;
-  };
-
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
+  const social = Object.entries(SITE.social).filter(([, v]) => v)
   return (
-    <footer className="footer">
-      <div className="footer-container">
-        {/* Main Footer Content */}
-        <div className="footer-main">
-          {/* Company Information */}
-          <div className="footer-company">
-            <div className="footer-logo">
-              <div className="footer-logo-icon">
-                {footerData.company.logo}
-              </div>
-              <span className="footer-logo-text">
-                {footerData.company.name}
-              </span>
-            </div>
-            
-            <p className="footer-description">
-              {footerData.company.description}
-            </p>
-            
-            {/* Social Media Links */}
-            <div className="footer-social">
-              {footerData.socialMedia.map((social, index) => {
-                const IconComponent = getSocialIcon(social.icon);
-                return (
-                  <a
-                    key={index}
-                    href={social.url}
-                    className="footer-social-link"
-                    style={{ '--social-color': social.color }}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Follow us on ${social.name}`}
-                  >
-                    <IconComponent />
-                  </a>
-                );
-              })}
-            </div>
-
-            {/* Contact Information */}
-            <div className="footer-contact">
-              <div className="footer-contact-item">
-                <Mail size={16} />
-                <a href={`mailto:${footerData.contact.email}`}>
-                  {footerData.contact.email}
-                </a>
-              </div>
-              <div className="footer-contact-item">
-                <Phone size={16} />
-                <a href={`tel:${footerData.contact.phone}`}>
-                  {footerData.contact.phone}
-                </a>
-              </div>
-              <div className="footer-contact-item">
-                <MapPin size={16} />
-                <span>
-                  {footerData.contact.address.street}, {footerData.contact.address.city}, {footerData.contact.address.state} {footerData.contact.address.zipCode}
-                </span>
-              </div>
-            </div>
-
-            {/* Awards */}
-            <div className="footer-awards">
-              <h4 className="footer-awards-title">
-                <Award size={16} style={{ display: 'inline', marginRight: '0.5rem' }} />
-                Recognition
-              </h4>
-              <div className="footer-awards-list">
-                {footerData.awards.map((award, index) => (
-                  <div key={index} className="footer-award">
-                    {award.name} - {award.year}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter Subscription */}
-          <div className="footer-newsletter">
-            <h3 className="footer-newsletter-title">
-              {footerData.newsletter.title}
-            </h3>
-            <p className="footer-newsletter-description">
-              {footerData.newsletter.description}
-            </p>
-            <form className="footer-newsletter-form" onSubmit={handleNewsletterSubmit}>
-              <input
-                type="email"
-                id="newsletter-email"
-                name="newsletter-email"
-                autoComplete="email"
-                className="footer-newsletter-input"
-                placeholder={footerData.newsletter.placeholder}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                aria-label="Email address for newsletter subscription"
-              />
-              <button
-                type="submit"
-                className="footer-newsletter-button"
-                disabled={isSubscribing}
-              >
-                {isSubscribing ? (
-                  'Subscribing...'
-                ) : (
-                  <>
-                    <Send size={16} />
-                    {footerData.newsletter.buttonText}
-                  </>
-                )}
-              </button>
-            </form>
-          </div>
+    <footer className="site-footer">
+      <div className="container footer-grid">
+        <div className="footer-about">
+          <Link to="/" className="brand" aria-label="TechTrigger home">
+            <img src="/images/logo.png" alt="" width="44" height="44" />
+            <span>Tech<b>Trigger</b></span>
+          </Link>
+          <p>A software company in Rawalpindi building learning platforms, mobile apps, web portals and AI tools.</p>
+          {social.length > 0 && (
+            <ul className="social">
+              {social.map(([k, v]) => (
+                <li key={k}><a href={v} target="_blank" rel="noopener noreferrer">{k[0].toUpperCase() + k.slice(1)}</a></li>
+              ))}
+            </ul>
+          )}
         </div>
 
-        {/* Footer Links */}
-        <div className="footer-links">
-          <div className="footer-link-section">
-            <h4 className="footer-link-title">Company</h4>
-            <ul className="footer-link-list">
-              {footerData.navigation.company.map((link, index) => (
-                <li key={index} className="footer-link-item">
-                  <a href={link.href} className="footer-link">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-link-section">
-            <h4 className="footer-link-title">Services</h4>
-            <ul className="footer-link-list">
-              {footerData.navigation.services.map((link, index) => (
-                <li key={index} className="footer-link-item">
-                  <a href={link.href} className="footer-link">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-link-section">
-            <h4 className="footer-link-title">Resources</h4>
-            <ul className="footer-link-list">
-              {footerData.navigation.resources.map((link, index) => (
-                <li key={index} className="footer-link-item">
-                  <a href={link.href} className="footer-link">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="footer-link-section">
-            <h4 className="footer-link-title">Legal</h4>
-            <ul className="footer-link-list">
-              {footerData.navigation.legal.map((link, index) => (
-                <li key={index} className="footer-link-item">
-                  <a href={link.href} className="footer-link">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div>
+          <h3>Services</h3>
+          <ul>{SERVICES.map((s) => <li key={s.slug}><Link to={`/services/${s.slug}`}>{s.title}</Link></li>)}</ul>
         </div>
-
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          <div className="footer-copyright">
-            © {currentYear} {footerData.company.name}. All rights reserved. 
-            Established {footerData.company.established}.
-          </div>
-          <div className="footer-bottom-links">
-            {footerData.navigation.legal.slice(0, 3).map((link, index) => (
-              <a key={index} href={link.href} className="footer-bottom-link">
-                {link.label}
-              </a>
-            ))}
-          </div>
+        <div>
+          <h3>Products</h3>
+          <ul>{PRODUCTS.map((p) => <li key={p.slug}><Link to={`/products/${p.slug}`}>{p.name}</Link></li>)}</ul>
+          <h3 className="mt">Company</h3>
+          <ul>
+            <li><Link to="/about">About us</Link></li>
+            <li><Link to="/industries">Industries</Link></li>
+            <li><Link to="/careers">Careers</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Visit or call</h3>
+          <ul className="contact-list">
+            <li><Icon name="MapPin" size={16} /><span>{SITE.address.street}, {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}, {SITE.address.country}</span></li>
+            <li><Icon name="Phone" size={16} /><a href={`tel:${SITE.phoneRaw}`}>{SITE.phone}</a></li>
+            <li><Icon name="MessageCircle" size={16} /><a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><Icon name="Mail" size={16} /><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <div className="container footer-bottom-inner">
+          <p>&copy; {new Date().getFullYear()} {SITE.legalName}. All rights reserved.</p>
+          <ul>
+            <li><Link to="/privacy">Privacy</Link></li>
+            <li><Link to="/terms">Terms</Link></li>
+            <li><Link to="/cookies">Cookies</Link></li>
+          </ul>
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

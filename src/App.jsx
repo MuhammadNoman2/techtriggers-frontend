@@ -1,171 +1,57 @@
-import { useState, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import GetStarted from './components/GetStarted';
-import Products from './components/Products';
-import Contact from './components/Contact';
-import Service from './components/Services';
-import BookingForm from './components/BookingForm';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
-import './styles/main.css';
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
+import Home from './pages/Home'
+import About from './pages/About'
+import Services from './pages/Services'
+import ServiceDetail from './pages/ServiceDetail'
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
+import Industries from './pages/Industries'
+import Careers from './pages/Careers'
+import Contact from './pages/Contact'
+import Legal from './pages/Legal'
+import NotFound from './pages/NotFound'
 
-// Lazy load less frequently accessed pages
-const AboutUs = lazy(() => import('./components/AboutUs'));
-const Team = lazy(() => import('./components/Team'));
-const Careers = lazy(() => import('./components/Careers'));
-const Blog = lazy(() => import('./components/Blog'));
-const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
-const TermsAndConditions = lazy(() => import('./components/TermsConditions'));
-const Security = lazy(() => import('./components/Security'));
-const GDPR = lazy(() => import('./components/GDPR'));
-const Cookies = lazy(() => import('./components/Cookies'));
-const NotFound = lazy(() => import('./components/NotFound'));
-
-// Loading component
-const LoadingFallback = () => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: '100vh',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    color: 'white',
-    fontSize: '1.5rem'
-  }}>
-    Loading...
-  </div>
-);
-
-function App() {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  const startProject = () => setIsBookingOpen(true);
-  const closeProjectForm = () => setIsBookingOpen(false);
-
-  return (
-    <Router>
-      <div className="app">
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <Navbar startProject={startProject} />
-        <WhatsAppButton />
-        <main id="main-content" role="main">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <div id="get-started">
-                  <GetStarted startProject={startProject} />
-                </div>
-                <div id="products">
-                  <Products />
-                </div>
-                <div id="service">
-                  <Service  startProject={startProject} />
-                </div>
-                <div id="contact">
-                  <Contact />
-                </div>
-                <BookingForm isOpen={isBookingOpen} onClose={closeProjectForm} formType="project" />
-                <div id="footer">
-                  <Footer />
-                </div>
-              </>
-            }
-          />
-
-          {/* Company Pages */}
-          <Route path="/about" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <AboutUs />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/team" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <Team />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/careers" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <Careers />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/blog" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <Blog />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-
-          {/* Legal Pages */}
-          <Route path="/privacy" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <PrivacyPolicy />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/terms" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <TermsAndConditions />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/cookies" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <Cookies />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/gdpr" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <GDPR />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-          <Route path="/security" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <Security />
-              <div id="footer">
-                <Footer />
-              </div>
-            </Suspense>
-          } />
-
-          {/* 404 Not Found Route */}
-          <Route path="*" element={
-            <Suspense fallback={<LoadingFallback />}>
-              <NotFound />
-            </Suspense>
-          } />
-        </Routes>
-        </main>
-      </div>
-    </Router>
-  );
+function ScrollManager() {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1))
+      if (el) { el.scrollIntoView(); return }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
+  return null
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <a href="#main" className="skip-link">Skip to main content</a>
+      <ScrollManager />
+      <Header />
+      <main id="main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Legal kind="privacy" />} />
+          <Route path="/terms" element={<Legal kind="terms" />} />
+          <Route path="/cookies" element={<Legal kind="cookies" />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </>
+  )
+}

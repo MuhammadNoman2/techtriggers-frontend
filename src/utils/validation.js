@@ -9,7 +9,7 @@ export const validateEmail = (email) => {
 
 export const validatePhone = (phone) => {
   // Accept formats: +923337627457, 03337627457, +92-333-7627457, etc.
-  const phoneRegex = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{1,5}$/;
+  const phoneRegex = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,5}[-\s.]?[0-9]{1,5}$/;
   if (!phone) return ''; // Phone is optional in contact form
   if (!phoneRegex.test(phone)) return 'Please enter a valid phone number';
   return '';
