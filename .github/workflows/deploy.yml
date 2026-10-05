@@ -1,0 +1,73 @@
+name: Deploy to Hostinger
+
+# Runs when you push a version tag, for example:  git tag v1.0.1 && git push origin v1.0.1
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run lint
+
+      # Public values only. The contact form posts to the PHP API already running on Hostinger.
+      - name: Build (static pages, sitemap, robots)
+        run: npm run build
+        env:
+          VITE_API_BASE_URL: https://techtrigger.org/api/api
+          VITE_API_CONTACT_ENDPOINT: /contact.php
+          VITE_API_QUOTE_ENDPOINT: /quotation.php
+
+      - name: Check the build output
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
+          test -f dist/sitemap.xml
+          test -f dist/.htaccess
+          test -f dist/team/talha-waseem.jpg
+          ! grep -rl "localhost:8888" dist/assets
+
+      # Uploads only changed files. The api/ folder (PHP backend) is never touched.
+      - name: Upload to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            api/**
+            .well-known/**
+
+      - name: Smoke test the live site
+        run: |
+          sleep 10
+          curl -fsS -o /dev/null https://techtrigger.org/
+          curl -fsS -o /dev/null https://techtrigger.org/sitemap.xml
+          curl -fsS https://techtrigger.org/robots.txt | grep -q "Sitemap:"
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://techtrigger.org/this-page-does-not-exist)
+          echo "Unknown URL returned HTTP $code"
+          test "$code" = "404"

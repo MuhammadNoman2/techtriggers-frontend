@@ -15,10 +15,18 @@ npm run dev        # local development
 npm run build      # builds dist/ with one HTML file per page + sitemap.xml + robots.txt
 ```
 
-## Deploy to Hostinger
-Upload the **contents of `dist/`** to `public_html/` (including the hidden `.htaccess`). Then:
-1. Submit `https://techtrigger.org/sitemap.xml` in Google Search Console.
-2. Copy `.env.example` to `.env` before building and set `VITE_API_BASE_URL` to the live contact API. Without it the contact form posts to localhost and falls back to the email/WhatsApp message.
+## Deploy to Hostinger (automatic)
+Push a version tag and GitHub Actions builds the site and uploads `dist/` to Hostinger by FTPS:
+```bash
+git push origin main
+git tag v1.0.1 && git push origin v1.0.1
+```
+The workflow is `.github/workflows/deploy.yml`. It never touches the `api/` folder (the PHP backend).
+
+One-time setup, in the repo's Settings, Secrets and variables, Actions (or with `gh secret set NAME`):
+`FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`, `FTP_SERVER_DIR` (for example `/public_html/`, set it to the folder your FTP account must write into).
+
+After the first deploy, submit `https://techtrigger.org/sitemap.xml` in Google Search Console.
 
 ## Rules for content
 Only publish facts we can show. Add a new product, client or number to `data.js` only when it is true.
