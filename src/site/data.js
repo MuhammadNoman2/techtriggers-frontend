@@ -1,11 +1,40 @@
 import { PLAY } from './config'
 
 export const FACTS = [
-  { value: '2', label: 'Apps live on Google Play' },
-  { value: '1,500+', label: 'Installs across both apps' },
-  { value: '2', label: 'Founding clients, both in education' },
-  { value: '3', label: 'Founders who build and support it' },
+  { to: 2, suffix: '', label: 'Apps live on Google Play' },
+  { to: 1500, suffix: '+', label: 'Installs across both apps' },
+  { to: 2, suffix: '', label: 'Founding clients, both in education' },
+  { to: 3, suffix: '', label: 'Founders who build and support it' },
 ]
+
+export const HERO_SLIDES = [
+  {
+    kicker: 'Software company · Rawalpindi, Pakistan',
+    title: 'Software that works in real classrooms and real businesses.',
+    text: 'We build learning platforms, mobile apps, web portals and AI tools. Our apps are live on Google Play for Dar-e-Arqam.',
+    cta: { label: 'Learn more', to: '/about' },
+    poster: '/images/hero-team.jpg',
+    video: '/videos/hero-team.mp4',
+  },
+  {
+    kicker: 'Education platforms',
+    title: 'One platform. Your institution, your name.',
+    text: 'Set up a branded learning site for a school, college or academy from a single admin panel, with a matching app for students.',
+    cta: { label: 'See the products', to: '/products' },
+    poster: '/images/hero-lms.jpg',
+    video: '/videos/hero-lms.mp4',
+  },
+  {
+    kicker: 'Coming soon',
+    title: 'WhatsApp Sales Desk. Never lose a lead in a chat.',
+    text: 'A shared team inbox with follow-up reminders and AI-drafted replies that your team approves.',
+    cta: { label: 'Explore the Sales Desk', to: '/products/whatsapp-sales-desk' },
+    poster: '/images/hero-sales-desk.jpg',
+    video: '/videos/hero-sales-desk.mp4',
+  },
+]
+
+export const TECH = ['Flutter', 'React', 'Python', 'Django', 'Node.js', 'PostgreSQL', 'Redis', 'Docker', 'Firebase', 'Next.js', 'Nginx', 'AI models']
 
 export const SERVICES = [
   {
@@ -27,7 +56,7 @@ export const SERVICES = [
     proof: 'Seen in: DAC AI, Ilmi Duniya',
     seoTitle: 'Mobile App Development in Rawalpindi',
     seoDescription:
-      'Flutter mobile apps for Android and iOS, built and published by TechTrigger in Rawalpindi. See our live apps on Google Play.',
+      'Flutter mobile apps for Android and iOS, built and published by Tech Triggers in Rawalpindi. See our live apps on Google Play.',
   },
   {
     slug: 'web-development',
@@ -48,7 +77,7 @@ export const SERVICES = [
     proof: 'Seen in: DAC AI web portal, the LMS platform',
     seoTitle: 'Web Application & Website Development',
     seoDescription:
-      'Business websites, dashboards and web portals built with React, Python and Node by TechTrigger, a software company in Rawalpindi, Pakistan.',
+      'Business websites, dashboards and web portals built with React, Python and Node by Tech Triggers, a software company in Rawalpindi, Pakistan.',
   },
   {
     slug: 'ai-solutions',
@@ -69,7 +98,7 @@ export const SERVICES = [
     proof: 'Seen in: DAC AI',
     seoTitle: 'AI Solutions for Apps and Businesses',
     seoDescription:
-      'Practical AI features for apps and businesses: assistants, content generation and automation, built by TechTrigger in Pakistan.',
+      'Practical AI features for apps and businesses: assistants, content generation and automation, built by Tech Triggers in Pakistan.',
   },
   {
     slug: 'education-lms',
@@ -111,7 +140,7 @@ export const SERVICES = [
     proof: 'Seen in: every app and portal we ship',
     seoTitle: 'UI/UX Design for Apps and Websites',
     seoDescription:
-      'User-focused interface design for mobile apps and websites, from wireframes to clickable prototypes, by TechTrigger.',
+      'User-focused interface design for mobile apps and websites, from wireframes to clickable prototypes, by Tech Triggers.',
   },
   {
     slug: 'cloud-hosting-devops',
@@ -132,7 +161,7 @@ export const SERVICES = [
     proof: 'Seen in: the LMS platform and its mobile apps',
     seoTitle: 'Cloud Hosting, Deployment & DevOps',
     seoDescription:
-      'VPS deployment, Docker, databases, backups and maintenance for web and mobile apps, handled by TechTrigger in Rawalpindi.',
+      'VPS deployment, Docker, databases, backups and maintenance for web and mobile apps, handled by Tech Triggers in Rawalpindi.',
   },
 ]
 
@@ -163,7 +192,7 @@ export const PRODUCTS = [
     ],
     seoTitle: 'DAC AI: College Learning App with AI Tools',
     seoDescription:
-      'DAC AI is the official Dar-e-Arqam Group of Colleges learning app: online classes, quizzes, progress reports and AI study tools. Built by TechTrigger.',
+      'DAC AI is the official Dar-e-Arqam Group of Colleges learning app: online classes, quizzes, progress reports and AI study tools. Built by Tech Triggers.',
   },
   {
     slug: 'ilmi-duniya',
@@ -189,7 +218,7 @@ export const PRODUCTS = [
     ],
     seoTitle: 'Ilmi Duniya: School Learning App',
     seoDescription:
-      'Ilmi Duniya is the school learning app of Dar-e-Arqam Schools: subject-wise lessons, quizzes, past papers and an AI chatbot. Built by TechTrigger.',
+      'Ilmi Duniya is the school learning app of Dar-e-Arqam Schools: subject-wise lessons, quizzes, past papers and an AI chatbot. Built by Tech Triggers.',
   },
   {
     slug: 'dac-ai-web',
@@ -232,49 +261,148 @@ export const PRODUCTS = [
     ],
     seoTitle: 'LMS Platform for Schools and Colleges',
     seoDescription:
-      'A multi-institution learning platform: create a branded LMS for a school, college or academy from one admin panel. Built by TechTrigger.',
+      'A multi-institution learning platform: create a branded LMS for a school, college or academy from one admin panel. Built by Tech Triggers.',
+  },
+  {
+    slug: 'whatsapp-sales-desk',
+    name: 'WhatsApp Sales Desk',
+    kind: 'Web app for sales teams',
+    for: 'Sales teams whose deals start on WhatsApp, built first for real estate teams',
+    tagline: 'Turn your WhatsApp number into an accountable sales desk.',
+    image: '/images/salesdesk/dashboard.jpg',
+    status: 'Coming soon',
+    soon: true,
+    summary:
+      'A shared team inbox on the official WhatsApp Business platform. Every chat has an owner and a response time, leads that are going cold are flagged before they are lost, and an AI copilot drafts replies from your own listings and answers while your team decides what to send. It is running in private testing today.',
+    screens: [
+      { src: '/images/salesdesk/dashboard.jpg', alt: 'Sales Desk dashboard showing leads at risk, overdue follow-ups, viewings today, median first reply and pipeline value', caption: 'Dashboard: what needs attention today.' },
+      { src: '/images/salesdesk/inbox.jpg', alt: 'Sales Desk shared inbox with conversation filters, assignment, follow-up and viewing buttons and a suggested reply', caption: 'Inbox: shared chats with owners and the 24-hour reply window.' },
+      { src: '/images/salesdesk/channels.jpg', alt: 'Sales Desk channels page with WhatsApp Business connected and Instagram, Facebook Messenger, email and TikTok planned', caption: 'Channels: WhatsApp Business is ready; more channels are planned.' },
+    ],
+    features: [
+      ['Shared inbox', 'One WhatsApp Business number, many agents. Filter by Needs reply, Mine, Unassigned or Snoozed, and see the 24-hour reply window on every chat.'],
+      ['Lead Recovery', 'Flags leads at risk and raises recovery alerts, so a cold lead never goes unnoticed.'],
+      ['Follow-ups and viewings', 'Schedule a follow-up or a property viewing straight from the conversation, with reminders for the owner.'],
+      ['Contacts and listings', 'Keep contacts, requirements and your property listings together, and attach a listing photo to a reply.'],
+      ['AI suggested replies', 'Drafts a reply from your own listings and knowledge base. It tells you when a human should answer, and your team sends every message.'],
+      ['Message templates', 'Use approved WhatsApp templates once the 24-hour reply window has closed.'],
+      ['Performance dashboard', 'Median first reply, new leads, viewings held, win rate, pipeline value and the month’s spend.'],
+      ['Team and owners', 'Assign chats, see who owns what and how the team is doing.'],
+      ['More channels planned', 'WhatsApp Business is ready. Instagram, Facebook Messenger, email and TikTok are on the roadmap.'],
+    ],
+    cta: { label: 'Join the waitlist', to: '/contact' },
+    note:
+      'WhatsApp is a trademark of Meta. Tech Triggers is not affiliated with or endorsed by Meta. The Sales Desk is in private testing and has not been released publicly. It launches after our Meta business verification is complete. Screens are from our test version, with names and numbers blurred.',
+    seoTitle: 'WhatsApp Sales Desk: Shared Inbox for Sales Teams',
+    seoDescription:
+      'WhatsApp Sales Desk by Tech Triggers, coming soon: a shared team inbox, lead recovery, follow-ups, viewings and AI-drafted replies for sales teams.',
   },
 ]
 
-export const COMING_SOON = {
-  name: 'Social Inbox',
-  tagline: 'One shared inbox for your team’s customer messages.',
-  text: 'We are building a shared team inbox that brings WhatsApp and social messages into one place, with assignment, follow-up reminders and AI-drafted replies that your team approves. It is in development and not yet released. It needs Meta business verification, which we complete after company registration.',
-  points: ['Shared inbox with an owner for every chat', 'Follow-up reminders for cold leads', 'AI drafts, your team decides'],
-}
-
 export const INDUSTRIES = [
   {
+    slug: 'schools-and-colleges',
     title: 'Schools & Colleges',
     badge: 'Our live work',
+    live: true,
     image: '/images/ind-education.jpg',
     text: 'Learning apps, web portals and a full LMS for institutions. Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools are our first and best clients.',
-    link: '/products',
-    linkLabel: 'See the products',
+    headline: 'Learning software built with working institutions.',
+    intro:
+      'Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools are our first and best clients. What we built for them is what we can build for you: apps students open, portals teachers use and a platform administrators control.',
+    points: [
+      'Roles for administrators, teachers, students and parents',
+      'Quizzes, past papers, progress and attendance reports',
+      'Announcements and online classes',
+      'Content organised by class, subject and chapter',
+    ],
+    solutions: [
+      ['DAC AI', '/products/dac-ai', 'College learning app with online classes, quizzes, reports and AI study tools.'],
+      ['Ilmi Duniya', '/products/ilmi-duniya', 'School app with subject-wise lessons, quizzes and past papers.'],
+      ['DAC AI Web Portal', '/products/dac-ai-web', 'Admin, teacher, student and parent logins on the web.'],
+      ['LMS Platform', '/products/lms-platform', 'Your own branded learning site, set up from one admin panel.'],
+    ],
+    proof: 'Live with Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools.',
+    seoTitle: 'Software for Schools & Colleges',
+    seoDescription:
+      'Learning apps, web portals and an LMS for schools and colleges in Pakistan, built with and used by Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools.',
   },
   {
+    slug: 'academies-and-coaching',
     title: 'Academies & Coaching',
     badge: 'Open for projects',
     image: '/images/ind-college.jpg',
     text: 'The same platform can run an academy, tuition centre or training institute under its own name.',
-    link: '/products/lms-platform',
-    linkLabel: 'About the LMS',
+    headline: 'Run your academy on a platform with your name on it.',
+    intro:
+      'An academy or tuition centre needs the same basics as a school: classes, content, quizzes and progress. The LMS platform can be set up under your name, address and colours without building anything from scratch.',
+    points: [
+      'Your own web address, logo and colours',
+      'Courses, chapters, videos and quizzes',
+      'Student progress and reports for teachers',
+      'Plans with expiry dates built in',
+    ],
+    solutions: [
+      ['LMS Platform', '/products/lms-platform', 'A separate, branded learning site for each institution.'],
+      ['Education & LMS service', '/services/education-lms', 'Setup, branding and training from our team.'],
+      ['Mobile app development', '/services/mobile-app-development', 'An Android app for your students.'],
+    ],
+    proof: 'We have not yet set up an academy outside Dar-e-Arqam, and we will say so when you ask.',
+    seoTitle: 'LMS for Academies & Coaching Centres',
+    seoDescription:
+      'Run an academy, tuition centre or training institute on a branded learning platform with its own address, logo, users and quizzes. Built by Tech Triggers.',
   },
   {
+    slug: 'small-and-medium-business',
     title: 'Small & Medium Business',
     badge: 'Open for projects',
     image: '/images/ind-business.jpg',
     text: 'A website that brings in enquiries, a dashboard to manage orders or customers, a mobile app for your team.',
-    link: '/services/web-development',
-    linkLabel: 'Web development',
+    headline: 'A website that brings enquiries and tools that save your team time.',
+    intro:
+      'Most small businesses need three things: to be found, to answer customers quickly, and to keep track of what happens next. We build the website, the internal tools and the apps that cover those.',
+    points: [
+      'A fast website that search engines can read',
+      'Dashboards for orders, customers or staff',
+      'A mobile app for your team in the field',
+      'Hosting, backups and updates handled for you',
+    ],
+    solutions: [
+      ['Web applications & websites', '/services/web-development', 'Company websites, portals and admin panels.'],
+      ['Mobile app development', '/services/mobile-app-development', 'Android and iOS apps from one codebase.'],
+      ['WhatsApp Sales Desk', '/products/whatsapp-sales-desk', 'Coming soon: a shared inbox for customer chats.'],
+      ['AI solutions', '/services/ai-solutions', 'Assistants and automation that save real time.'],
+    ],
+    proof: 'We are new to this sector. We would rather scope a small first project well than promise a lot.',
+    seoTitle: 'Software for Small & Medium Business',
+    seoDescription:
+      'Websites, dashboards, mobile apps and AI tools for small and medium businesses in Pakistan, built by Tech Triggers in Rawalpindi.',
   },
   {
+    slug: 'retail-and-ecommerce',
     title: 'Retail & E-commerce',
     badge: 'Open for projects',
     image: '/images/ind-retail.jpg',
     text: 'Online stores and product catalogues, ready for search engines and mobile shoppers.',
-    link: '/contact',
-    linkLabel: 'Talk to us',
+    headline: 'Online stores and catalogues that work well on a phone.',
+    intro:
+      'Shoppers browse on their phones and ask questions on WhatsApp. We build stores and catalogues that load fast, show up in search, and make it easy for a customer to reach you.',
+    points: [
+      'Online stores and product catalogues',
+      'Mobile-first design',
+      'Search-friendly pages for every product',
+      'Customer chat handled by a shared team inbox (coming soon)',
+    ],
+    solutions: [
+      ['Web applications & websites', '/services/web-development', 'Stores, catalogues and admin panels.'],
+      ['Mobile app development', '/services/mobile-app-development', 'A shopping app for your customers.'],
+      ['WhatsApp Sales Desk', '/products/whatsapp-sales-desk', 'Coming soon: answer customers as a team.'],
+      ['Cloud, hosting & DevOps', '/services/cloud-hosting-devops', 'Hosting that stays up and gets backed up.'],
+    ],
+    proof: 'We have not yet launched a store for a client. We build to your needs and tell you honestly what is new to us.',
+    seoTitle: 'Software for Retail & E-commerce',
+    seoDescription:
+      'Online stores, catalogues and mobile apps for retail businesses in Pakistan, built by Tech Triggers with search and mobile shoppers in mind.',
   },
 ]
 

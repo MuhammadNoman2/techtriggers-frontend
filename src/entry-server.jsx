@@ -2,7 +2,7 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import App from './App'
 import { seoStore } from './site/seoData'
-import { SERVICES, PRODUCTS } from './site/data'
+import { SERVICES, PRODUCTS, INDUSTRIES } from './site/data'
 
 export function render(url) {
   seoStore.current = null
@@ -15,8 +15,9 @@ export function render(url) {
 }
 
 export const getRoutes = () => [
-  '/', '/about', '/services', '/industries', '/products', '/careers', '/contact',
+  '/', '/about', '/what-we-do', '/services', '/industries', '/products', '/careers', '/contact',
   ...SERVICES.map((s) => `/services/${s.slug}`),
   ...PRODUCTS.map((p) => `/products/${p.slug}`),
+  ...INDUSTRIES.map((i) => `/industries/${i.slug}`),
   '/privacy', '/terms', '/cookies',
 ]

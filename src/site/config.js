@@ -2,8 +2,8 @@
 // Only put things here that are true today.
 
 export const SITE = {
-  name: 'TechTrigger',
-  legalName: 'TechTrigger', // TODO: replace with the registered company name once registration is final
+  name: 'Tech Triggers',
+  legalName: 'Tech Triggers', // TODO: replace with the registered company name once registration is final
   url: 'https://techtrigger.org',
   tagline: 'Software for schools, colleges and growing businesses',
   email: 'techtriggers76@gmail.com',

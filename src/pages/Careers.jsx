@@ -10,7 +10,7 @@ export default function Careers() {
     <>
       <Seo
         title="Marketing & Social Media Job, Rawalpindi"
-        description="Join TechTrigger in Rawalpindi as our Marketing & Social Media Specialist. Help a small software company with real products tell its story."
+        description="Join Tech Triggers in Rawalpindi as our Marketing & Social Media Specialist. Help a small software company with real products tell its story."
         path="/careers"
         image="/images/careers.jpg"
         jsonLd={[
@@ -23,7 +23,7 @@ export default function Careers() {
             description: `<p>${JOB.intro}</p><ul>${JOB.does.map((d) => `<li>${d}</li>`).join('')}</ul>`,
             datePosted: '2026-10-05',
             employmentType: 'FULL_TIME',
-            hiringOrganization: { '@type': 'Organization', name: SITE.name, sameAs: SITE.url, logo: `${SITE.url}/images/logo.png` },
+            hiringOrganization: { '@type': 'Organization', name: SITE.name, sameAs: SITE.url, logo: `${SITE.url}/images/logo-full.png` },
             jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: 'Rawalpindi', addressRegion: 'Punjab', addressCountry: 'PK' } },
           },
         ]}

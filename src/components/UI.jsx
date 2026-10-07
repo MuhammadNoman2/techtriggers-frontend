@@ -1,29 +1,42 @@
 import { Link } from 'react-router-dom'
 import {
   Smartphone, Globe, Brain, GraduationCap, PenTool, Server, ArrowRight, Check,
-  Phone, Mail, MapPin, MessageCircle, ChevronDown, Menu, X, ExternalLink, Clock,
+  Phone, Mail, MapPin, MessageCircle, ChevronDown, ChevronLeft, ChevronRight, Menu, X, ExternalLink, Clock, Play, Pause,
 } from 'lucide-react'
+import { Reveal, SplitText } from './motion'
 
-const ICONS = { Smartphone, Globe, Brain, GraduationCap, PenTool, Server, ArrowRight, Check, Phone, Mail, MapPin, MessageCircle, ChevronDown, Menu, X, ExternalLink, Clock }
+const ICONS = { Smartphone, Globe, Brain, GraduationCap, PenTool, Server, ArrowRight, Check, Phone, Mail, MapPin, MessageCircle, ChevronDown, ChevronLeft, ChevronRight, Menu, X, ExternalLink, Clock, Play, Pause }
 export const Icon = ({ name, size = 22, ...rest }) => {
   const C = ICONS[name] || Check
   return <C size={size} aria-hidden="true" {...rest} />
 }
 
+export const Logo = ({ className = '' }) => (
+  <span className={`logo ${className}`.trim()}>
+    <img src="/images/logo-mark.png" alt="" width="44" height="48" />
+    <span className="wordmark">TECH TRIGGERS</span>
+  </span>
+)
+
 export const Eyebrow = ({ children }) => <p className="eyebrow">{children}</p>
 
-export const SectionHead = ({ eyebrow, title, text, center = false }) => (
+export const SectionHead = ({ eyebrow, title, text, center = false, as = 'h2' }) => (
   <div className={`section-head${center ? ' center' : ''}`}>
-    {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-    <h2>{title}</h2>
-    {text && <p className="lead">{text}</p>}
+    {eyebrow && <Reveal as="p" className="eyebrow">{eyebrow}</Reveal>}
+    <SplitText as={as} text={title} />
+    {text && <Reveal as="p" className="lead" delay={150}>{text}</Reveal>}
   </div>
 )
 
+export const StatusBadge = ({ p }) => (
+  <span className={`badge ${p.soon ? 'soon-badge' : 'ok'}`}>{p.status}</span>
+)
+
 export const PageHero = ({ eyebrow, title, text, image, crumbs, children }) => (
-  <section className="page-hero">
+  <section className="page-hero dark">
+    <div className="page-hero-glow" aria-hidden="true" />
     <div className="container page-hero-inner">
-      <div>
+      <div className="page-hero-copy">
         {crumbs && (
           <nav className="crumbs" aria-label="Breadcrumb">
             {crumbs.map(([label, to], i) => (
@@ -34,7 +47,7 @@ export const PageHero = ({ eyebrow, title, text, image, crumbs, children }) => (
             ))}
           </nav>
         )}
-        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h1>{title}</h1>
         {text && <p className="lead">{text}</p>}
         {children}
@@ -55,26 +68,26 @@ export const Button = ({ to, href, variant = 'primary', children, ...rest }) => 
 }
 
 export const CtaBand = ({ title = 'Have a project in mind?', text = 'Tell us what you need. We reply within one working day, usually sooner.' }) => (
-  <section className="cta-band">
+  <section className="cta-band dark">
     <div className="container cta-inner">
       <div>
-        <h2>{title}</h2>
-        <p>{text}</p>
+        <SplitText text={title} />
+        <Reveal as="p" delay={120}>{text}</Reveal>
       </div>
-      <div className="cta-actions">
-        <Button to="/contact">Book a consultation <Icon name="ArrowRight" size={18} /></Button>
-        <Button href="https://wa.me/923376279457" variant="light" target="_blank" rel="noopener noreferrer">
+      <Reveal className="cta-actions" delay={200}>
+        <Button to="/contact" variant="light">Connect now <Icon name="ArrowRight" size={18} /></Button>
+        <Button href="https://wa.me/923376279457" variant="ghost" target="_blank" rel="noopener noreferrer">
           <Icon name="MessageCircle" size={18} /> WhatsApp us
         </Button>
-      </div>
+      </Reveal>
     </div>
   </section>
 )
 
 export const Checklist = ({ items }) => (
   <ul className="checklist">
-    {items.map((t) => (
-      <li key={t}><Icon name="Check" size={18} /><span>{t}</span></li>
+    {items.map((t, i) => (
+      <Reveal as="li" key={t} delay={i * 70}><Icon name="Check" size={18} /><span>{t}</span></Reveal>
     ))}
   </ul>
 )

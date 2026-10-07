@@ -1,12 +1,18 @@
-# TechTrigger website
+# Tech Triggers website
 
-Company site for TechTrigger (techtrigger.org). React 19 + Vite, pre-rendered to static HTML for SEO.
+Company site for Tech Triggers (techtrigger.org). React 19 + Vite, pre-rendered to static HTML for SEO.
 
 ## Edit content
 - Company facts (phone, email, address, social links): `src/site/config.js`
 - Services, products, industries, founders, job post: `src/site/data.js`
 - Page layouts: `src/pages/`  ·  Styles: `src/styles/site.css`
 - Photos: `public/images/` (from Unsplash, free licence). Founder photos: `public/team/talha-waseem.jpg`, `muhammad-noman.jpg`, `ali-daud.jpg` (portrait 4:5, about 800x1000)
+
+## Hero videos (optional)
+The home page slider plays a looping video behind each slide when the file exists, and shows a poster photo otherwise.
+Put muted mp4 files (1920x1080, about 8 seconds, under 4 MB each) in `public/videos/` with these exact names, then rebuild:
+`hero-team.mp4`, `hero-lms.mp4`, `hero-sales-desk.mp4`.
+Compress with: `ffmpeg -i input.mp4 -an -vf "scale=1920:-2" -c:v libx264 -crf 28 -preset slow -pix_fmt yuv420p -movflags +faststart output.mp4`
 
 ## Run and build
 ```bash

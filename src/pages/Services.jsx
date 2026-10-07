@@ -9,7 +9,7 @@ export default function Services() {
     <>
       <Seo
         title="Software Development Services"
-        description="Mobile apps, web applications, AI solutions, LMS platforms, UI/UX design and cloud hosting from TechTrigger, a software company in Rawalpindi, Pakistan."
+        description="Mobile apps, web applications, AI solutions, LMS platforms, UI/UX design and cloud hosting from Tech Triggers, a software company in Rawalpindi, Pakistan."
         path="/services"
         jsonLd={[orgJsonLd(), breadcrumb([['Home', '/'], ['Services', '/services']])]}
       />

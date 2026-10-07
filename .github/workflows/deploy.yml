@@ -41,6 +41,8 @@ jobs:
         run: |
           test -f dist/index.html
           test -f dist/404.html
+          test -f dist/what-we-do/index.html
+          test -f dist/products/whatsapp-sales-desk/index.html
           test -f dist/sitemap.xml
           test -f dist/.htaccess
           test -f dist/team/talha-waseem.jpg
@@ -59,7 +61,15 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/.DS_Store
             api/**
+            admin/**
+            student/**
+            teacher/**
+            dacai/**
+            myportfolio/**
+            .env
+            .env.production
             .well-known/**
 
       - name: Smoke test the live site

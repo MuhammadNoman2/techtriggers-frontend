@@ -1,7 +1,29 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { SITE, NAV } from '../site/config'
-import { Icon } from './UI'
+import { SITE } from '../site/config'
+import { SERVICES, PRODUCTS, INDUSTRIES } from '../site/data'
+import { Icon, Logo } from './UI'
+
+const MENUS = [
+  {
+    label: 'What we do',
+    to: '/what-we-do',
+    groups: [
+      { title: 'Services', items: SERVICES.map((s) => [s.title, `/services/${s.slug}`]) },
+      { title: 'Products', items: PRODUCTS.map((p) => [p.name, `/products/${p.slug}`, p.soon ? 'Soon' : null]) },
+    ],
+  },
+  {
+    label: 'Who we are',
+    to: '/about',
+    groups: [{ title: 'Company', items: [['About us', '/about'], ['Founders', '/about#founders'], ['Careers', '/careers'], ['Contact', '/contact']] }],
+  },
+  {
+    label: 'Industries',
+    to: '/industries',
+    groups: [{ title: 'Who we serve', items: INDUSTRIES.map((i) => [i.title, `/industries/${i.slug}`]) }],
+  },
+]
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -10,7 +32,7 @@ export default function Header() {
 
   useEffect(() => { setOpen(false) }, [pathname])
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 8)
+    const on = () => setScrolled(window.scrollY > 24)
     on()
     window.addEventListener('scroll', on, { passive: true })
     return () => window.removeEventListener('scroll', on)
@@ -20,52 +42,41 @@ export default function Header() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  const Dropdown = ({ label, items }) => (
-    <li className="has-menu">
-      <button type="button" className="menu-trigger" aria-haspopup="true">
-        {label} <Icon name="ChevronDown" size={15} />
-      </button>
-      <div className="menu-panel">
-        {items.map((i) => (
-          <Link key={i.to} to={i.to} className="menu-item">
-            <strong>{i.label}</strong>
-            <span>{i.note}</span>
-          </Link>
-        ))}
-      </div>
-    </li>
-  )
-
   return (
-    <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
-      <div className="topbar">
-        <div className="container topbar-inner">
-          <div className="topbar-left">
-            <a href={`tel:${SITE.phoneRaw}`}><Icon name="Phone" size={14} /> {SITE.phone}</a>
-            <a href={`mailto:${SITE.email}`}><Icon name="Mail" size={14} /> {SITE.email}</a>
-            <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer"><Icon name="MessageCircle" size={14} /> WhatsApp</a>
-          </div>
-          <div className="topbar-right">
-            <Link to="/careers">Careers</Link>
-            <Link to="/contact">Contact us</Link>
-          </div>
-        </div>
-      </div>
-
+    <header className={`site-header${scrolled || open ? ' scrolled' : ''}`}>
       <div className="container navbar">
-        <Link to="/" className="brand" aria-label="TechTrigger home">
-          <img src="/images/logo.png" alt="" width="44" height="44" />
-          <span>Tech<b>Trigger</b></span>
-        </Link>
+        <Link to="/" className="brand" aria-label="Tech Triggers home"><Logo /></Link>
 
         <nav aria-label="Main" className={`nav${open ? ' open' : ''}`}>
           <ul>
-            <Dropdown label="What we do" items={NAV.what} />
-            <Dropdown label="Who we are" items={NAV.who} />
-            <li><NavLink to="/industries">Industries</NavLink></li>
-            <li className="nav-mobile-only"><NavLink to="/careers">Careers</NavLink></li>
+            {MENUS.map((m) => (
+              <li className="has-menu" key={m.to}>
+                <NavLink to={m.to} className="nav-link" end={m.to !== '/industries'}>
+                  {m.label} <Icon name="ChevronDown" size={14} />
+                </NavLink>
+                <div className="menu-panel">
+                  <div className={`menu-cols cols-${m.groups.length}`}>
+                    {m.groups.map((g) => (
+                      <div key={g.title}>
+                        <p className="menu-title">{g.title}</p>
+                        <ul>
+                          {g.items.map(([label, to, tag]) => (
+                            <li key={to}><Link to={to} className="menu-item">{label}{tag && <span className="menu-tag">{tag}</span>}</Link></li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                  <Link to={m.to} className="menu-all">All of {m.label.toLowerCase()} <Icon name="ArrowRight" size={14} /></Link>
+                </div>
+              </li>
+            ))}
+            <li className="nav-mobile-only"><NavLink to="/careers" className="nav-link">Careers</NavLink></li>
           </ul>
-          <Link to="/contact" className="btn btn-primary nav-cta">Book a consultation</Link>
+          <div className="nav-actions">
+            <a className="nav-phone" href={`tel:${SITE.phoneRaw}`}><Icon name="Phone" size={15} /> {SITE.phone}</a>
+            <Link to="/contact" className="btn btn-light nav-cta">Connect now</Link>
+          </div>
         </nav>
 
         <button type="button" className="burger" onClick={() => setOpen(!open)} aria-expanded={open} aria-label={open ? 'Close menu' : 'Open menu'}>

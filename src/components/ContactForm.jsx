@@ -10,6 +10,7 @@ const INTERESTS = [
   'LMS for my school, college or academy',
   'UI/UX design',
   'Hosting and maintenance',
+  'WhatsApp Sales Desk (join the waitlist)',
   'Something else',
 ]
 

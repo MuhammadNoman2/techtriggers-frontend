@@ -9,12 +9,12 @@ export default function Contact() {
     <>
       <Seo
         title="Contact us"
-        description="Contact TechTrigger in Rawalpindi: call, WhatsApp, email or visit our office on Main GT Road. Book a free consultation."
+        description="Contact Tech Triggers in Rawalpindi: call, WhatsApp, email or visit our office on Main GT Road. Book a free consultation."
         path="/contact"
         jsonLd={[
           orgJsonLd(),
           breadcrumb([['Home', '/'], ['Contact', '/contact']]),
-          { '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact TechTrigger', url: `${SITE.url}/contact/` },
+          { '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact Tech Triggers', url: `${SITE.url}/contact/` },
         ]}
       />
       <PageHero

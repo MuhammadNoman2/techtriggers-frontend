@@ -7,7 +7,7 @@ const PAGES = {
   privacy: {
     title: 'Privacy Policy',
     updated: 'October 2026',
-    description: 'How TechTrigger collects, uses and protects your personal information.',
+    description: 'How Tech Triggers collects, uses and protects your personal information.',
     sections: [
       ['What we collect', ['Contact details you send us: name, email address, phone number and your message.', 'Basic technical data such as pages visited, if we use analytics (we will say so here if we do).']],
       ['How we use it', ['To reply to your enquiry and to deliver our services.', 'To send important updates about a project or service you asked about.', 'To meet legal obligations.']],
@@ -20,10 +20,10 @@ const PAGES = {
   terms: {
     title: 'Terms & Conditions',
     updated: 'October 2026',
-    description: 'The terms for using the TechTrigger website and services, including content, projects, liability and governing law in Pakistan.',
+    description: 'The terms for using the Tech Triggers website and services, including content, projects, liability and governing law in Pakistan.',
     sections: [
       ['Using this website', ['Use the site lawfully and do not try to disrupt it or access it without permission.']],
-      ['Our content', ['Text, images, logos and design on this site belong to TechTrigger or are used under licence. Please do not copy them without written permission.']],
+      ['Our content', ['Text, images, logos and design on this site belong to Tech Triggers or are used under licence. Please do not copy them without written permission.']],
       ['Services and projects', ['Project scope, price, timeline and payment terms are agreed in writing before work starts. Anything on this website is general information, not an offer.']],
       ['Liability', ['This website is provided as is. To the extent allowed by law, we are not liable for indirect or consequential loss arising from its use.']],
       ['Governing law', ['These terms are governed by the laws of Pakistan.']],
@@ -32,7 +32,7 @@ const PAGES = {
   cookies: {
     title: 'Cookie Policy',
     updated: 'October 2026',
-    description: 'How the TechTrigger website uses cookies: we use no advertising or tracking cookies, and will update this page if that changes.',
+    description: 'How the Tech Triggers website uses cookies: we use no advertising or tracking cookies, and will update this page if that changes.',
     sections: [
       ['Our approach', ['This website does not use advertising or tracking cookies. It may store small technical items in your browser that are needed for the site to work.']],
       ['If this changes', ['If we add analytics or marketing tools, we will list them here and ask for your consent where required.']],

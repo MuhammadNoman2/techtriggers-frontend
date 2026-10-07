@@ -13,7 +13,7 @@ function Founder({ f }) {
       <div className="founder-photo">
         {broken
           ? <div className="founder-initials" aria-hidden="true">{initials}</div>
-          : <img src={f.photo} alt={`${f.name}, ${f.role} of TechTrigger`} width="600" height="750" loading="lazy" onError={() => setBroken(true)} />}
+          : <img src={f.photo} alt={`${f.name}, ${f.role} of Tech Triggers`} width="600" height="750" loading="lazy" onError={() => setBroken(true)} />}
       </div>
       <h3>{f.name}</h3>
       <p className="role">{f.role}</p>
@@ -29,7 +29,7 @@ export default function About() {
     <>
       <Seo
         title="About us"
-        description="Meet the three founders of TechTrigger, a software company in Rawalpindi. Our story, our values and the clients we build for."
+        description="Meet the three founders of Tech Triggers, a software company in Rawalpindi. Our story, our values and the clients we build for."
         path="/about"
         jsonLd={[orgJsonLd(), breadcrumb([['Home', '/'], ['About', '/about']])]}
       />
@@ -46,7 +46,7 @@ export default function About() {
           <SectionHead eyebrow="Our story" title="From one college’s needs to a platform for many." />
           <div className="prose">
             <p>
-              TechTrigger began with a plain question: how can a college give every student a better way to learn, and every teacher a
+              Tech Triggers began with a plain question: how can a college give every student a better way to learn, and every teacher a
               simpler way to track it? Dar-e-Arqam Group of Colleges was the first to ask it with us.
             </p>
             <p>
@@ -72,7 +72,7 @@ export default function About() {
 
       <section className="section tint" id="founders">
         <div className="container">
-          <SectionHead eyebrow="Founders" title="The people behind TechTrigger." center />
+          <SectionHead eyebrow="Founders" title="The people behind Tech Triggers." center />
           <div className="founders">
             {FOUNDERS.map((f) => <Founder key={f.name} f={f} />)}
           </div>

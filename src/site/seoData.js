@@ -25,10 +25,10 @@ export const orgJsonLd = () => {
         '@id': `${SITE.url}/#organization`,
         name: SITE.name,
         url: SITE.url,
-        logo: absolute('/images/logo.png'),
+        logo: absolute('/images/logo-full.png'),
         image: absolute(SITE.ogImage),
         description:
-          'TechTrigger is a software company in Rawalpindi, Pakistan, building learning platforms, mobile apps, web portals and AI tools.',
+          'Tech Triggers is a software company in Rawalpindi, Pakistan, building learning platforms, mobile apps, web portals and AI tools.',
         email: SITE.email,
         telephone: SITE.phoneRaw,
         address: {

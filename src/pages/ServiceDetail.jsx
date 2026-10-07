@@ -26,7 +26,7 @@ export default function ServiceDetail() {
         ]}
       />
       <PageHero crumbs={[['Home', '/'], ['Services', '/services'], [s.title]]} eyebrow="Service" title={s.title} text={s.intro} image={s.image}>
-        <div className="hero-actions dark-text"><Button to="/contact">Discuss your project <Icon name="ArrowRight" size={18} /></Button></div>
+        <div className="hero-actions"><Button to="/contact">Discuss your project <Icon name="ArrowRight" size={18} /></Button></div>
       </PageHero>
       <section className="section">
         <div className="container two-col">
