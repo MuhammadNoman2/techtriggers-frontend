@@ -42,6 +42,7 @@ jobs:
           test -f dist/index.html
           test -f dist/404.html
           test -f dist/what-we-do/index.html
+          test -f dist/case-studies/dar-e-arqam/index.html
           test -f dist/products/whatsapp-sales-desk/index.html
           test -f dist/sitemap.xml
           test -f dist/.htaccess

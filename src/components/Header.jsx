@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { SITE } from '../site/config'
-import { SERVICES, PRODUCTS, INDUSTRIES } from '../site/data'
+import { SERVICES, PRODUCTS, INDUSTRIES, CASE_STUDY } from '../site/data'
 import { Icon, Logo } from './UI'
 
 const MENUS = [
@@ -16,7 +16,7 @@ const MENUS = [
   {
     label: 'Who we are',
     to: '/about',
-    groups: [{ title: 'Company', items: [['About us', '/about'], ['Founders', '/about#founders'], ['Careers', '/careers'], ['Contact', '/contact']] }],
+    groups: [{ title: 'Company', items: [['About us', '/about'], ['Founders', '/about#founders'], ['Case study', `/case-studies/${CASE_STUDY.slug}`], ['Careers', '/careers'], ['Contact', '/contact']] }],
   },
   {
     label: 'Industries',

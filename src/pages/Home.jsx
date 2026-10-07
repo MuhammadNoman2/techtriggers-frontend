@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import Seo from '../site/seo'
 import { orgJsonLd } from '../site/seoData'
 import { PLAY } from '../site/config'
-import { FACTS, HERO_SLIDES, TECH } from '../site/data'
+import { FACTS, HERO_SLIDES, TECH, CASE_STUDY } from '../site/data'
 import { Icon, SectionHead, Button, CtaBand } from '../components/UI'
 import { Reveal, SplitText, CountUp } from '../components/motion'
 import HeroSlider from '../components/HeroSlider'
@@ -109,6 +109,16 @@ export default function Home() {
           <SectionHead eyebrow="Industries" title="Industries *we serve.*" text="Education is where we have delivered. We take on other projects too, and we tell you honestly when something is new to us." />
           <IndustryCarousel />
           <Reveal className="more-row"><Link className="text-link light" to="/industries">View all industries <Icon name="ArrowRight" size={16} /></Link></Reveal>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container case-teaser">
+          <Reveal anim="left" className="case-photo"><img src="/images/product-dac-ai.jpg" alt="DAC AI app screens" width="1200" height="800" loading="lazy" /></Reveal>
+          <div>
+            <SectionHead eyebrow="Case study" title="How Dar-e-Arqam *learns on our platform.*" text="Two apps, a web portal and a multi-institution platform for our first clients, and how we keep improving them." />
+            <Reveal delay={200}><Link className="btn btn-outline" to={`/case-studies/${CASE_STUDY.slug}`}>Read the case study <Icon name="ArrowRight" size={18} /></Link></Reveal>
+          </div>
         </div>
       </section>
 

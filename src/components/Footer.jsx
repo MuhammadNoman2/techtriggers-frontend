@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SITE } from '../site/config'
-import { SERVICES, PRODUCTS, INDUSTRIES } from '../site/data'
+import { SERVICES, PRODUCTS, INDUSTRIES, CASE_STUDY } from '../site/data'
 import { Icon, Logo } from './UI'
 import { Reveal } from './motion'
 
@@ -35,6 +35,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/about">About us</Link></li>
             <li><Link to="/what-we-do">What we do</Link></li>
+            <li><Link to={`/case-studies/${CASE_STUDY.slug}`}>Case study</Link></li>
             <li><Link to="/careers">Careers</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>

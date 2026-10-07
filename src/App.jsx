@@ -11,6 +11,7 @@ import Services from './pages/Services'
 import ServiceDetail from './pages/ServiceDetail'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
+import CaseStudyPage from './pages/CaseStudy'
 import Industries from './pages/Industries'
 import IndustryDetail from './pages/IndustryDetail'
 import Careers from './pages/Careers'
@@ -66,6 +67,7 @@ export default function App() {
           <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/industries/:slug" element={<IndustryDetail />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyPage />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Legal kind="privacy" />} />

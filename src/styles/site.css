@@ -259,6 +259,11 @@ a.card:hover .card-photo img{transform:scale(1.07)}
 .carousel-nav button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;color:#fff;font-size:1.2rem;cursor:pointer;transition:background .25s,color .25s,transform .25s var(--ease)}
 .carousel-nav button:hover{background:var(--orange);border-color:var(--orange);color:#1a0d05;transform:scale(1.08)}
 
+/* Case study teaser */
+.case-teaser{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.case-photo img{border-radius:var(--radius);box-shadow:var(--shadow)}
+@media (max-width:860px){.case-teaser{grid-template-columns:1fr;gap:30px}}
+
 /* Careers CTA + CTA band */
 .two-col-cta{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .cta-band{padding:76px 0;background:linear-gradient(115deg,#050506 0%,#17171b 60%,#2a1a10 100%);position:relative;overflow:hidden}
@@ -297,6 +302,19 @@ a.card:hover .card-photo img{transform:scale(1.07)}
 .row-actions{display:flex;gap:12px;flex-wrap:wrap}
 .inline-link{font-weight:600;display:inline-flex;gap:6px;align-items:center;margin-right:18px}
 .link-card .card-body{gap:8px}
+
+/* Case study */
+.glance{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);background:#fff;overflow:hidden;margin:0}
+.glance-item{padding:22px 26px;border-bottom:1px solid var(--line)}
+.glance-item:nth-child(odd){border-right:1px solid var(--line)}
+.glance-item:last-child{border-bottom:0;grid-column:span 2;border-right:0}
+.glance dt{font:600 .75rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--orange-d);margin-bottom:6px}
+.glance dd{margin:0;font:500 1.15rem/1.4 var(--head);color:var(--black)}
+.plain-list{list-style:none;display:grid;gap:10px;margin:12px 0 0}
+.plain-list li{position:relative;padding-left:20px;color:var(--muted)}
+.plain-list li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.plain-list.light li{color:#cfcfd8}
+@media (max-width:700px){.glance{grid-template-columns:1fr}.glance-item:nth-child(odd){border-right:0}.glance-item:last-child{grid-column:auto}}
 
 /* Product screenshots */
 .screens{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}

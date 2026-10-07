@@ -482,3 +482,50 @@ export const JOB = {
     'Short-video editing skills',
   ],
 }
+
+export const CASE_STUDY = {
+  slug: 'dar-e-arqam',
+  title: 'One learning system for Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools',
+  intro:
+    'How we built two Android apps, a web portal and a multi-institution platform for our first and best clients, and how we keep improving them.',
+  glance: [
+    ['Clients', 'Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools'],
+    ['What we delivered', 'Two Android apps, a web portal and a multi-institution LMS platform'],
+    ['Live on Google Play', 'DAC AI (500+ downloads) and Ilmi Duniya (1K+ downloads)'],
+    ['Our role', 'Design, development, hosting and continuing updates'],
+    ['Technology', 'Flutter, React, Django, PostgreSQL, Redis, Docker, our own AI model service'],
+  ],
+  goal: [
+    'A group of colleges and schools wants every student to have lessons, quizzes and progress in one place, every teacher to prepare and track work without extra paperwork, and every administrator to see what is happening across campuses.',
+    'We built that as one system with different front doors: a college app, a school app, and a web portal for administrators, teachers, students and parents. Everyone works from the same data, so what a teacher does on the web shows up on a student’s phone.',
+  ],
+  built: [
+    ['DAC AI', '/products/dac-ai', 'The college app: online classes, quizzes and challenges, progress reports, announcements, and AI tools for podcasts, practice papers, slides and voice help.'],
+    ['Ilmi Duniya', '/products/ilmi-duniya', 'The school app: lessons by subject and chapter, quizzes, past papers, a chatbot, revision and challenge mode, with teacher tools.'],
+    ['DAC AI Web Portal', '/products/dac-ai-web', 'Separate logins for administrators, teachers, students and parents, with content management, results and reports.'],
+    ['LMS Platform', '/products/lms-platform', 'The system underneath: each institution has its own address, branding, users and data, created from one super-admin panel.'],
+  ],
+  roles: [
+    ['Students', ['Video lectures and online classes', 'Topic quizzes that count towards progress', 'Announcements, past papers and revision', 'AI podcast, practice papers, slides and voice help in DAC AI']],
+    ['Teachers', ['Prepare any topic with notes, quizzes and slides, or upload their own files', 'Class and per-student marks, attendance and missed work', 'Export reports as PDF', 'Post announcements to a class']],
+    ['Administrators', ['Manage users, campuses and content', 'Grades, subjects, chapters, topics, quizzes and videos', 'Dashboards, results and activity in one place']],
+    ['Parents', ['Sign in on the web portal to follow a child’s progress', 'See attendance and results', 'One account for children across campuses']],
+  ],
+  syllabus:
+    'The college content is organised by examination board and grade, so a student sees the material for their own board. AI tools use that same context, which keeps generated notes and papers relevant to the syllabus.',
+  recent: [
+    'Teachers can prepare any topic with notes, quizzes and slides in DAC AI, or upload their own files',
+    'A Reports tab shows class and per-student marks, attendance and missed work, with PDF export',
+    'Topic quizzes can be attempted and count towards progress',
+    'Videos come from the college’s own channel first and play in the app',
+    'Faster images and documents, and expired sessions now sign back in',
+  ],
+  behind: [
+    'Apps are written in Flutter, the web portal in React, and the back end in Django with PostgreSQL and Redis.',
+    'The AI tools run on our own model service, so we control cost, limits and what data leaves the system.',
+    'Everything is deployed with Docker on servers we manage, with backups and updates handled by our team.',
+  ],
+  seoTitle: 'Case Study: Dar-e-Arqam Learning Platform',
+  seoDescription:
+    'How Tech Triggers built DAC AI, Ilmi Duniya, a web portal and an LMS platform for Dar-e-Arqam Group of Colleges and Dar-e-Arqam Schools.',
+}
