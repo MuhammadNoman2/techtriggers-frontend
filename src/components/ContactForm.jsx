@@ -10,11 +10,22 @@ const INTERESTS = [
   'LMS for my school, college or academy',
   'UI/UX design',
   'Hosting and maintenance',
-  'WhatsApp Sales Desk (join the waitlist)',
+  'WhatsApp Sales Desk (request a demo)',
   'Something else',
 ]
 
 const empty = { firstName: '', lastName: '', email: '', phone: '', organization: '', interest: INTERESTS[0], message: '', website: '' }
+
+function Field({ name, label, type = 'text', required, autoComplete, value, onChange, error }) {
+  return (
+    <div className="field">
+      <label htmlFor={name}>{label}{required && <span aria-hidden="true"> *</span>}</label>
+      <input id={name} name={name} type={type} value={value} onChange={onChange} autoComplete={autoComplete}
+        aria-invalid={!!error} aria-describedby={error ? `${name}-err` : undefined} />
+      {error && <p className="err" id={`${name}-err`}>{error}</p>}
+    </div>
+  )
+}
 
 export default function ContactForm() {
   const [data, setData] = useState(empty)
@@ -27,6 +38,7 @@ export default function ContactForm() {
     e.preventDefault()
     if (data.website) return // honeypot: real people never fill this in
     const v = validateContactForm(data)
+    if (!data.phone.trim()) v.phone = 'Phone or WhatsApp number is required'
     if (Object.keys(v).length) { setErrors(v); return }
     setErrors({})
     setStatus('sending')
@@ -50,26 +62,17 @@ export default function ContactForm() {
     )
   }
 
-  const Field = ({ name, label, type = 'text', required, autoComplete }) => (
-    <div className="field">
-      <label htmlFor={name}>{label}{required && <span aria-hidden="true"> *</span>}</label>
-      <input id={name} name={name} type={type} value={data[name]} onChange={set} autoComplete={autoComplete}
-        aria-invalid={!!errors[name]} aria-describedby={errors[name] ? `${name}-err` : undefined} />
-      {errors[name] && <p className="err" id={`${name}-err`}>{errors[name]}</p>}
-    </div>
-  )
-
   return (
     <form className="form-card" onSubmit={submit} noValidate>
       <div className="grid-2">
-        <Field name="firstName" label="First name" required autoComplete="given-name" />
-        <Field name="lastName" label="Last name" required autoComplete="family-name" />
+        <Field name="firstName" label="First name" required autoComplete="given-name" value={data.firstName} onChange={set} error={errors.firstName} />
+        <Field name="lastName" label="Last name" required autoComplete="family-name" value={data.lastName} onChange={set} error={errors.lastName} />
       </div>
       <div className="grid-2">
-        <Field name="email" label="Email" type="email" required autoComplete="email" />
-        <Field name="phone" label="Phone or WhatsApp" type="tel" autoComplete="tel" />
+        <Field name="email" label="Email" type="email" required autoComplete="email" value={data.email} onChange={set} error={errors.email} />
+        <Field name="phone" label="Phone or WhatsApp" type="tel" required autoComplete="tel" value={data.phone} onChange={set} error={errors.phone} />
       </div>
-      <Field name="organization" label="School, college or company" autoComplete="organization" />
+      <Field name="organization" label="School, college or company" autoComplete="organization" value={data.organization} onChange={set} error={errors.organization} />
       <div className="field">
         <label htmlFor="interest">I am interested in</label>
         <select id="interest" name="interest" value={data.interest} onChange={set}>

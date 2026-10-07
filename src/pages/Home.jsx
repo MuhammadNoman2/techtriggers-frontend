@@ -97,7 +97,7 @@ export default function Home() {
 
       <section className="section">
         <div className="container">
-          <SectionHead eyebrow="Our products" title="Built with Dar-e-Arqam. *Ready for the next institution.*" text="Live today: two apps on Google Play, a web portal and an LMS platform. Coming soon: the WhatsApp Sales Desk." />
+          <SectionHead eyebrow="Our products" title="Built with Dar-e-Arqam. *Ready for the next institution.*" text="Live today: two apps on Google Play, a web portal and an LMS platform. In early access: the WhatsApp Sales Desk." />
           <ProductCards />
         </div>
       </section>

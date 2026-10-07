@@ -29,7 +29,7 @@ export const SectionHead = ({ eyebrow, title, text, center = false, as = 'h2' })
 )
 
 export const StatusBadge = ({ p }) => (
-  <span className={`badge ${p.soon ? 'soon-badge' : 'ok'}`}>{p.status}</span>
+  <span className={`badge ${p.early ? 'soon-badge' : 'ok'}`}>{p.status}</span>
 )
 
 export const PageHero = ({ eyebrow, title, text, image, crumbs, children }) => (

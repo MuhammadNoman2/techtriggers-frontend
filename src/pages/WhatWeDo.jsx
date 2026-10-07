@@ -31,7 +31,7 @@ export default function WhatWeDo() {
 
       <section className="section tint" id="products">
         <div className="container">
-          <SectionHead eyebrow="Products" title="Ready to use, *proven with Dar-e-Arqam.*" text="Two apps on Google Play, a web portal, an LMS platform and a WhatsApp Sales Desk on the way." />
+          <SectionHead eyebrow="Products" title="Ready to use, *proven with Dar-e-Arqam.*" text="Two apps on Google Play, a web portal, an LMS platform and the WhatsApp Sales Desk in early access." />
           <ProductCards />
         </div>
       </section>

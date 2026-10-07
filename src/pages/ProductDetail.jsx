@@ -40,6 +40,7 @@ export default function ProductDetail() {
         <div className="container narrow">
           <p className="lead">{p.summary}</p>
           <p className="proof">Built for: {p.for}. Built by Tech Triggers.</p>
+          {p.credit && <p className="proof">{p.credit}</p>}
           {p.note && <p className="muted small">{p.note}</p>}
         </div>
       </section>
@@ -92,8 +93,8 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
-      {p.soon
-        ? <CtaBand title="Want early access?" text="Tell us about your team and how you use WhatsApp today. We will contact you when the Sales Desk opens." />
+      {p.early
+        ? <CtaBand title="Want to see it in action?" text="Tell us about your team and how you use WhatsApp today, and we will arrange a demo." />
         : <CtaBand title="Want this for your institution?" text="We can set it up under your own name and branding. Ask for a demo." />}
     </>
   )

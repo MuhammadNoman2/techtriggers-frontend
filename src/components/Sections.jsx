@@ -28,7 +28,7 @@ export function ProductCards() {
   return (
     <div className="product-grid">
       {PRODUCTS.map((p) => (
-        <Link to={`/products/${p.slug}`} key={p.slug} className={`card product-card${p.soon ? ' is-soon' : ''}`}>
+        <Link to={`/products/${p.slug}`} key={p.slug} className={`card product-card${p.early ? ' is-early' : ''}`}>
           <div className="card-photo short"><img src={p.image} alt="" width="1000" height="667" loading="lazy" /></div>
           <div className="card-body">
             <div className="meta"><StatusBadge p={p} /><span className="muted">{p.kind}</span></div>
@@ -51,7 +51,7 @@ export function SalesBanner() {
           <img src={p.screens[0].src} alt={p.screens[0].alt} width="1600" height="952" loading="lazy" />
         </Reveal>
         <div className="sales-copy">
-          <Reveal as="span" className="badge soon-badge">Coming soon</Reveal>
+          <Reveal as="span" className="badge soon-badge">Early access</Reveal>
           <Reveal as="h2" delay={80}>{p.name}</Reveal>
           <Reveal as="p" className="lead" delay={160}>{p.summary}</Reveal>
           <Reveal as="ul" className="sales-points" delay={240}>
@@ -61,7 +61,7 @@ export function SalesBanner() {
           </Reveal>
           <Reveal className="hero-actions" delay={320}>
             <Button to={`/products/${p.slug}`}>Explore the Sales Desk <Icon name="ArrowRight" size={18} /></Button>
-            <Button to="/contact" variant="ghost">Join the waitlist</Button>
+            <Button to="/contact" variant="ghost">Request a demo</Button>
           </Reveal>
         </div>
       </div>

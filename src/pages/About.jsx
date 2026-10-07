@@ -63,7 +63,7 @@ export default function About() {
               problems that no plan does.
             </p>
             <p>
-              Today we are building more for institutions, taking on web and app projects for businesses, and developing a shared inbox for teams that
+              Today we are building more for institutions, taking on web and app projects for businesses, and offering early access to a shared inbox for teams that
               answer customers on WhatsApp.
             </p>
           </div>

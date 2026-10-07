@@ -10,7 +10,7 @@ const MENUS = [
     to: '/what-we-do',
     groups: [
       { title: 'Services', items: SERVICES.map((s) => [s.title, `/services/${s.slug}`]) },
-      { title: 'Products', items: PRODUCTS.map((p) => [p.name, `/products/${p.slug}`, p.soon ? 'Soon' : null]) },
+      { title: 'Products', items: PRODUCTS.map((p) => [p.name, `/products/${p.slug}`, p.tag || null]) },
     ],
   },
   {
