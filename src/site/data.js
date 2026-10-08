@@ -25,7 +25,7 @@ export const HERO_SLIDES = [
     video: '/videos/hero-lms.mp4',
   },
   {
-    kicker: 'Early access',
+    kicker: 'Now live',
     title: 'WhatsApp Sales Desk. Never lose a lead in a chat.',
     text: 'A shared team inbox with follow-up reminders and AI-drafted replies that your team approves.',
     cta: { label: 'Explore the Sales Desk', to: '/products/whatsapp-sales-desk' },
@@ -270,11 +270,11 @@ export const PRODUCTS = [
     for: 'Sales teams whose deals start on WhatsApp, built first for real estate teams',
     tagline: 'Turn your WhatsApp number into an accountable sales desk.',
     image: '/images/salesdesk/dashboard.jpg',
-    status: 'Early access',
-    early: true,
+    status: 'Live',
+    early: false,
     tag: 'New',
     summary:
-      'A shared team inbox on the official WhatsApp Business platform. Every chat has an owner and a response time, leads that are going cold are flagged before they are lost, and an AI copilot drafts replies from your own listings and answers while your team decides what to send. Early access is open, so ask for a demo.',
+      'A shared team inbox on the official WhatsApp Business platform. Every chat has an owner and a response time, leads that are going cold are flagged before they are lost, and an AI copilot drafts replies from your own listings and answers while your team decides what to send. Ask for a demo to see it with your own team’s chats.',
     screens: [
       { src: '/images/salesdesk/dashboard.jpg', alt: 'Sales Desk dashboard showing leads at risk, overdue follow-ups, viewings today, median first reply and pipeline value', caption: 'Dashboard: what needs attention today.' },
       { src: '/images/salesdesk/inbox.jpg', alt: 'Sales Desk shared inbox with conversation filters, assignment, follow-up and viewing buttons and a suggested reply', caption: 'Inbox: shared chats with owners and the 24-hour reply window.' },
@@ -294,7 +294,7 @@ export const PRODUCTS = [
     cta: { label: 'Request a demo', to: '/contact' },
     credit: 'Built by Tech Triggers in collaboration with MK TechSol, who host the platform.',
     note:
-      'WhatsApp is a trademark of Meta. Tech Triggers is not affiliated with or endorsed by Meta. The Sales Desk is in early access, and connecting a production WhatsApp number requires Meta business verification. Screens are from our test version, with names and numbers blurred.',
+      'WhatsApp is a trademark of Meta. Tech Triggers is not affiliated with or endorsed by Meta. Screens are from our test version, with names and numbers blurred.',
     seoTitle: 'WhatsApp Sales Desk: Shared Inbox for Sales Teams',
     seoDescription:
       'WhatsApp Sales Desk by Tech Triggers in collaboration with MK TechSol: a shared team inbox, lead recovery, follow-ups and AI-drafted replies. Request a demo.',
@@ -372,7 +372,7 @@ export const INDUSTRIES = [
     solutions: [
       ['Web applications & websites', '/services/web-development', 'Company websites, portals and admin panels.'],
       ['Mobile app development', '/services/mobile-app-development', 'Android and iOS apps from one codebase.'],
-      ['WhatsApp Sales Desk', '/products/whatsapp-sales-desk', 'Early access: a shared inbox for customer chats.'],
+      ['WhatsApp Sales Desk', '/products/whatsapp-sales-desk', 'A shared inbox for customer chats.'],
       ['AI solutions', '/services/ai-solutions', 'Assistants and automation that save real time.'],
     ],
     proof: 'We are new to this sector. We would rather scope a small first project well than promise a lot.',
@@ -393,12 +393,12 @@ export const INDUSTRIES = [
       'Online stores and product catalogues',
       'Mobile-first design',
       'Search-friendly pages for every product',
-      'Customer chat handled by a shared team inbox (early access)',
+      'Customer chat handled by a shared team inbox',
     ],
     solutions: [
       ['Web applications & websites', '/services/web-development', 'Stores, catalogues and admin panels.'],
       ['Mobile app development', '/services/mobile-app-development', 'A shopping app for your customers.'],
-      ['WhatsApp Sales Desk', '/products/whatsapp-sales-desk', 'Early access: answer customers as a team.'],
+      ['WhatsApp Sales Desk', '/products/whatsapp-sales-desk', 'Answer customers as a team.'],
       ['Cloud, hosting & DevOps', '/services/cloud-hosting-devops', 'Hosting that stays up and gets backed up.'],
     ],
     proof: 'We have not yet launched a store for a client. We build to your needs and tell you honestly what is new to us.',

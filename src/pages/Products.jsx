@@ -17,7 +17,7 @@ export default function Products() {
         crumbs={[['Home', '/'], ['Products']]}
         eyebrow="Our products"
         title="Software already in use at Dar-e-Arqam, plus the WhatsApp Sales Desk."
-        text="The two apps are on Google Play today, and the web portal and LMS platform run the same system. The WhatsApp Sales Desk is in early access."
+        text="The two apps are on Google Play today, and the web portal and LMS platform run the same system. The WhatsApp Sales Desk is live too."
       />
       <section className="section">
         <div className="container">
@@ -33,7 +33,7 @@ export default function Products() {
                   <div className="row-actions">
                     <Link className="btn btn-primary" to={`/products/${p.slug}`}>Details <Icon name="ArrowRight" size={18} /></Link>
                     {p.play && <a className="btn btn-outline" href={p.play} target="_blank" rel="noopener noreferrer">Google Play <Icon name="ExternalLink" size={16} /></a>}
-                    {p.early && p.cta && <Link className="btn btn-outline" to={p.cta.to}>{p.cta.label}</Link>}
+                    {p.cta && <Link className="btn btn-outline" to={p.cta.to}>{p.cta.label}</Link>}
                   </div>
                 </div>
               </article>

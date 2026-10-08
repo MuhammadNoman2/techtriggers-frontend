@@ -40,10 +40,7 @@ export const validateMessage = (message) => {
     return 'Message is required';
   }
   if (message.trim().length < 10) {
-    return 'Message must be at least 10 characters';
-  }
-  if (message.trim().length > 1000) {
-    return 'Message must be less than 1000 characters';
+    return 'Please tell us a little more (at least 10 characters)';
   }
   return '';
 };

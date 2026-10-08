@@ -93,7 +93,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
-      {p.early
+      {p.cta
         ? <CtaBand title="Want to see it in action?" text="Tell us about your team and how you use WhatsApp today, and we will arrange a demo." />
         : <CtaBand title="Want this for your institution?" text="We can set it up under your own name and branding. Ask for a demo." />}
     </>

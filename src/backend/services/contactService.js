@@ -9,11 +9,14 @@ export async function submitContact(formData) {
       body: JSON.stringify(formData)
     });
 
+    // The server explains validation problems in its JSON reply, so pass that on
+    // instead of throwing it away.
+    const body = await response.json().catch(() => null);
+    if (body) return body;
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    return await response.json();
+    return { success: false, message: 'Unexpected reply from the server.' };
   } catch (error) {
     console.error('Error submitting contact form:', error);
     return {

@@ -51,7 +51,7 @@ export function SalesBanner() {
           <img src={p.screens[0].src} alt={p.screens[0].alt} width="1600" height="952" loading="lazy" />
         </Reveal>
         <div className="sales-copy">
-          <Reveal as="span" className="badge soon-badge">Early access</Reveal>
+          <Reveal as="span" className="badge ok">{p.status}</Reveal>
           <Reveal as="h2" delay={80}>{p.name}</Reveal>
           <Reveal as="p" className="lead" delay={160}>{p.summary}</Reveal>
           <Reveal as="ul" className="sales-points" delay={240}>

@@ -49,13 +49,18 @@ export default function ContactForm() {
     if (res && res.success) { setStatus('sent'); setData(empty) }
     else {
       setStatus('idle')
-      setErrors({ submit: 'We could not send your message just now.' })
+      // Show the server's own reason next to the right field when it gives one.
+      const map = { first_name: 'firstName', last_name: 'lastName', email: 'email', phone: 'phone', message: 'message' }
+      const fieldErrors = {}
+      Object.entries((res && res.errors) || {}).forEach(([k, v]) => { if (map[k]) fieldErrors[map[k]] = String(v) })
+      if (Object.keys(fieldErrors).length) setErrors({ ...fieldErrors, submit: 'Please check the highlighted fields and try again.' })
+      else setErrors({ submit: 'We could not send your message just now.' })
     }
   }
 
   if (status === 'sent') {
     return (
-      <div className="form-card form-success" role="status">
+      <div className="form-card form-success in" role="status">
         <h3>Thank you. We have your message.</h3>
         <p>We will reply within one working day. If it is urgent, message us on <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
       </div>
