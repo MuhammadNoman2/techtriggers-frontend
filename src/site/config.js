@@ -14,7 +14,7 @@ export const SITE = {
     street: 'Apartment 436, Rafay Mall, Peshawar Road',
     city: 'Rawalpindi',
     region: 'Punjab',
-    postalCode: '', // TODO: add once confirmed for the Rafay Mall office
+    postalCode: '46000',
     country: 'Pakistan',
     countryCode: 'PK',
   },
