@@ -6,7 +6,7 @@ export const SITE = {
   legalName: 'Tech Triggers', // TODO: replace with the registered company name once registration is final
   url: 'https://techtrigger.org',
   tagline: 'Software for schools, colleges and growing businesses',
-  email: 'techtriggers76@gmail.com',
+  email: 'techtrigger76@gmail.com',
   phone: '+92 337 6279457',
   phoneRaw: '+923376279457',
   whatsapp: 'https://wa.me/923376279457',

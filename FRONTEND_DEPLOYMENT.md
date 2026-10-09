@@ -26,7 +26,7 @@ cp .env.production .env
 VITE_API_BASE_URL=https://techtrigger.org/api
 VITE_API_CONTACT_ENDPOINT=/contact.php
 VITE_API_QUOTE_ENDPOINT=/quotation.php
-VITE_COMPANY_EMAIL=techtriggers76@gmail.com
+VITE_COMPANY_EMAIL=techtrigger76@gmail.com
 VITE_COMPANY_PHONE=+923376279457
 VITE_COMPANY_WHATSAPP=https://wa.me/923376279457
 ```
@@ -191,7 +191,7 @@ Visit: `https://techtrigger.org`
 - [ ] Contact form submission works
 - [ ] Quote/Booking form works
 - [ ] Success messages display
-- [ ] Check techtriggers76@gmail.com for notifications
+- [ ] Check techtrigger76@gmail.com for notifications
 - [ ] User receives confirmation email
 
 ### 3. Test Responsiveness
@@ -301,7 +301,7 @@ npm run build
 ### Regular Checks
 - [ ] Check site loads correctly
 - [ ] Test form submissions weekly
-- [ ] Monitor techtriggers76@gmail.com for notifications
+- [ ] Monitor techtrigger76@gmail.com for notifications
 - [ ] Check error logs in Hostinger panel
 - [ ] Verify SSL certificate renewal (auto-renews)
 
