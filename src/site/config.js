@@ -11,10 +11,10 @@ export const SITE = {
   phoneRaw: '+923376279457',
   whatsapp: 'https://wa.me/923376279457',
   address: {
-    street: 'Office number 2, Main GT Road, opposite PSO pump',
+    street: 'Apartment 436, Rafay Mall, Peshawar Road',
     city: 'Rawalpindi',
     region: 'Punjab',
-    postalCode: '46200',
+    postalCode: '', // TODO: add once confirmed for the Rafay Mall office
     country: 'Pakistan',
     countryCode: 'PK',
   },

@@ -9,7 +9,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact us"
-        description="Contact Tech Triggers in Rawalpindi: call, WhatsApp, email or visit our office on Main GT Road. Book a free consultation."
+        description="Contact Tech Triggers in Rawalpindi: call, WhatsApp, email or visit our office at Rafay Mall, Peshawar Road. Book a free consultation."
         path="/contact"
         jsonLd={[
           orgJsonLd(),

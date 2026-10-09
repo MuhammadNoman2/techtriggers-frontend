@@ -36,7 +36,7 @@ export const orgJsonLd = () => {
           streetAddress: SITE.address.street,
           addressLocality: SITE.address.city,
           addressRegion: SITE.address.region,
-          postalCode: SITE.address.postalCode,
+          ...(SITE.address.postalCode ? { postalCode: SITE.address.postalCode } : {}),
           addressCountry: SITE.address.countryCode,
         },
         areaServed: 'PK',
