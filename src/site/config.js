@@ -22,7 +22,7 @@ export const SITE = {
   social: {
     linkedin: 'https://www.linkedin.com/company/tech-trigger/',
     instagram: 'https://www.instagram.com/tech.triggers/',
-    facebook: 'https://www.facebook.com/share/19crpWrrwM/',
+    facebook: 'https://www.facebook.com/people/Tech-Triggers/61589078417035/',
     youtube: '',
   },
   ogImage: '/og-image.jpg',
