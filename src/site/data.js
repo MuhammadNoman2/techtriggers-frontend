@@ -435,6 +435,7 @@ export const FOUNDERS = [
     name: 'Muhammad Noman',
     role: 'CTO & General Manager',
     photo: '/team/muhammad-noman.jpg',
+    portfolio: 'https://muhammad.noman.techtrigger.org/',
     bio: 'Leads engineering and technical operations: architecture and delivery across web, mobile and AI, plus the servers that run them.',
     focus: ['Software architecture', 'Web & mobile', 'AI & machine learning', 'DevOps & cloud'],
     education: 'Bachelor’s in Computer Science',

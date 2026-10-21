@@ -41,7 +41,7 @@ export const orgJsonLd = () => {
           addressCountry: SITE.address.countryCode,
         },
         areaServed: 'PK',
-        founder: [{ '@type': 'Person', name: 'Talha Waseem' }, { '@type': 'Person', name: 'Muhammad Noman' }, { '@type': 'Person', name: 'Ali Daud' }],
+        founder: [{ '@type': 'Person', name: 'Talha Waseem' }, { '@type': 'Person', name: 'Muhammad Noman', url: 'https://muhammad.noman.techtrigger.org/' }, { '@type': 'Person', name: 'Ali Daud' }],
         ...(sameAs.length ? { sameAs } : {}),
       },
       {

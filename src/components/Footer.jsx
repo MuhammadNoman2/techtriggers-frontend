@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SITE } from '../site/config'
-import { SERVICES, PRODUCTS, INDUSTRIES, CASE_STUDY } from '../site/data'
+import { SERVICES, PRODUCTS, INDUSTRIES, CASE_STUDY, FOUNDERS } from '../site/data'
 import { Icon, Logo } from './UI'
 import { Reveal } from './motion'
 
@@ -38,6 +38,9 @@ export default function Footer() {
             <li><Link to={`/case-studies/${CASE_STUDY.slug}`}>Case study</Link></li>
             <li><Link to="/careers">Careers</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            {FOUNDERS.filter((f) => f.portfolio).map((f) => (
+              <li key={f.name}><a href={f.portfolio} target="_blank" rel="noopener noreferrer">{f.name}’s portfolio</a></li>
+            ))}
           </ul>
           <h3 className="mt">Visit or call</h3>
           <ul className="contact-list">

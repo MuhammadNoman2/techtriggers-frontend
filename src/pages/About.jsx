@@ -20,6 +20,7 @@ function Founder({ f }) {
       <p>{f.bio}</p>
       <ul className="tags">{f.focus.map((t) => <li key={t}>{t}</li>)}</ul>
       <p className="edu">{f.education}</p>
+      {f.portfolio && <p className="edu"><a className="text-link" href={f.portfolio} target="_blank" rel="noopener noreferrer">View portfolio</a></p>}
     </article>
   )
 }
